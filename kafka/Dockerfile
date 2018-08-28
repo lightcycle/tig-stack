@@ -7,6 +7,6 @@ ADD run.sh /run.sh
 ADD create_sensordata_topic.sh /create_sensordata_topic.sh
 RUN chmod +x /*.sh
 
-RUN echo "offsets.topic.replication.factor=1 >> /opt/kafka_2.11-0.10.1.0/config/server.properties"
+RUN echo "offsets.topic.replication.factor=1" >> /opt/kafka_2.11-0.10.1.0/config/server.properties
 
 CMD ["/run.sh"]
