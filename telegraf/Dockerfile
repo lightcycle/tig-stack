@@ -8,6 +8,7 @@ USER root
 ADD telegraf.template.conf /telegraf.template.conf
 
 ADD run.sh /run.sh
+ADD wait-for-it.sh /wait-for-it.sh
 RUN chmod +x /*.sh
 
 CMD ["/run.sh"]

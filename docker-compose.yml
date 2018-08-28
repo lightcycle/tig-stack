@@ -48,6 +48,7 @@ telegraf:
     image: matisq/telegraf:latest
     links:
         - influxdb:influxdb
+        - kafka:kafka
     environment:
         HOST_NAME: "telegraf"
         INFLUXDB_HOST: "influxdb"
@@ -57,3 +58,12 @@ telegraf:
     volumes:
         - /var/run/docker.sock:/var/run/docker.sock
     privileged: true
+
+kafka:
+    build: kafka
+    ports:
+        - 2181:2181
+        - 9092:9092
+    environment:
+        ADVERTISED_HOST: kafka
+        ADVERTISED_PORT: 9092
